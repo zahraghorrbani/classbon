@@ -8,7 +8,7 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
     isOutline?: boolean;
     isLink?: boolean;
     animatedIcon?: boolean;
-    shap?: ButtonShap;
+    shape?: ButtonShap;
   };
 
 export type ButtonShap = "default" | "wide" | "full" | "square";

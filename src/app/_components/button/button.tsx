@@ -1,3 +1,4 @@
+import Loading from "../loading/loading";
 import { Size } from "../types/size.type";
 import { ButtonProps, ButtonShap } from "./button.types";
 import classNames from "classnames";
@@ -21,7 +22,7 @@ export default function Button({
   size = "normal",
   isDisabled = false,
   isOutline = false,
-  shap = "default",
+  shape = "default",
   isLoading = false,
   loadingType = "spinner",
   loadingText = "در حال ارسال درخواست",
@@ -41,10 +42,11 @@ export default function Button({
     { "pointer-events-none opacity-80": isLoading },
     { [`btn-${variant}`]: variant },
     { [`${sizeClasses[size]}`]: size },
-    { [`${shapClasses[shap]}`]: shap }
+    { [`${shapClasses[shape]}`]: shape }
   );
   return (
     <button type={type} disabled={isDisabled} {...rest} className={classes}>
+      {isLoading && <Loading type={loadingType} />}
       {isLoading ? loadingText : children}
     </button>
   );
