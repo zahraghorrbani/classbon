@@ -1,14 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-
-// import results from '../../../../.jest-test-results.json';
-
-// import { withTests } from '@storybook/addon-jest';
 import Button from "./button";
+
+// import results from "../../../../.jest-test-results.json";
+
+// import { withTests } from "@storybook/addon-jest";
 
 const meta: Meta<typeof Button> = {
   component: Button,
   tags: ["autodocs"],
   decorators: [
+    
     (Story) => {
       document.documentElement.classList.add("dark");
       return <Story />;
@@ -20,10 +21,10 @@ export default meta;
 
 type Story = StoryObj<typeof Button>;
 
-// export const Tests: Story = {
-//    render: (args) => (<Button {...args}>Click here</Button>)
-// };
-// Tests.decorators = [ withTests({results})]
+export const Tests: Story = {
+  render: (args) => <Button {...args}>Click here</Button>,
+};
+// Tests.decorators = [withTests({ results })];
 
 export const BrandColors: Story = {
   render: () => (
@@ -74,22 +75,22 @@ export const OutlineButtons: Story = {
 };
 
 export const OutlineStateButtons: Story = {
-    render: () => (
-        <>
-            <Button isOutline variant="success">
-                Success
-            </Button>
-            <Button isOutline variant="info">
-                Info
-            </Button>
-            <Button isOutline variant="warning">
-                Warning
-            </Button>
-            <Button isOutline variant="error">
-                Error
-            </Button>
-        </>
-    ),
+  render: () => (
+    <>
+      <Button isOutline variant="success">
+        Success
+      </Button>
+      <Button isOutline variant="info">
+        Info
+      </Button>
+      <Button isOutline variant="warning">
+        Warning
+      </Button>
+      <Button isOutline variant="error">
+        Error
+      </Button>
+    </>
+  ),
 };
 
 export const ButtonSizes: Story = {
