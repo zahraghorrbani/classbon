@@ -1,4 +1,6 @@
 import { Badge } from "@/app/_components/badge";
+import { IconArrowLeftFill, IconClock } from "@/app/_components/icons/icons";
+import Price from "@/app/_components/price/price";
 import { CourseSummary } from "@/types/course-summary-interface";
 import Image from "next/image";
 import Link from "next/link";
@@ -31,13 +33,20 @@ export default function CourseCard({
       <div className="card-body">
         <Link href={`/course/${slug}`}>{title}</Link>
         <p>{subTitle}</p>
-        <div>
-          <Badge variant="warning">{duration}</Badge>
-         {basePrice}
+        <div className="flex items-center justify-between mt-3">
+          <Badge variant="warning">
+            <IconClock width={16} height={16} />
+            {duration}
+          </Badge>
+          <Price price={basePrice} size="small" />
         </div>
       </div>
-      <Link className="card-footer justify-center" href={`/course/${slug}`}>
+      <Link
+        className="card-footer justify-center animated-icon"
+        href={`/course/${slug}`}
+      >
         مشاهده جزییات دوره
+        <IconArrowLeftFill />
       </Link>
     </div>
   );
