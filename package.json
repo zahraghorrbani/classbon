@@ -14,11 +14,15 @@
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.90.6",
+    "@tanstack/react-query-devtools": "^5.90.2",
+    "axios": "^1.13.1",
     "classnames": "^2.5.1",
     "colord": "^2.9.3",
     "next": "15.5.4",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "react-intersection-observer": "^10.0.0"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^4.1.1",

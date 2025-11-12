@@ -31,7 +31,7 @@ export default function CourseCard({
         <Badge variant="accent">{level}</Badge>
       </div>
       <div className="card-body">
-        <Link href={`/course/${slug}`}>{title}</Link>
+        <Link href={`/courses/${slug}`}>{title}</Link>
         <p>{subTitle}</p>
         <div className="flex items-center justify-between mt-3">
           <Badge variant="warning">
@@ -43,7 +43,7 @@ export default function CourseCard({
       </div>
       <Link
         className="card-footer justify-center animated-icon"
-        href={`/course/${slug}`}
+        href={`/courses/${slug}`}
       >
         مشاهده جزییات دوره
         <IconArrowLeftFill />
